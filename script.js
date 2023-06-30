@@ -1,27 +1,52 @@
 //computer's random choice 
 const choices = ["Rock", "Paper", "Scissors"];
 
-function getComputerChoice () {
-    console.log(choices[(Math.floor(Math.random() * choices.length))]);
+function getComputerChoice() {
+    console.log (choices[(Math.floor(Math.random() * choices.length))]);
 }
-getComputerChoice()
 
 
 //player's choice
-let playerChoice = prompt("What is your choice?")
+let playerSelection = prompt("Rock, Paper or Scissors?")
 
-if (playerChoice.toLowerCase() == "rock")
-    alert("You chose Rock");
-if (playerChoice.toLowerCase() == "paper")
-    alert("You chose Paper");
-if (playerChoice.toLowerCase() == "scissors")
-    alert("You chose Scissors");
-
-
-
-//round
-function playRound(playerSelection, computerSelection) {
-    if(playerSelection="Rock")
-    if(getComputerChoice = "Rock")
-        alert("Tie!")
+function getPlayerChoice() {
+    if (playerSelection.toLowerCase() == "rock")
+        alert("You chose Rock");
+    if (playerSelection.toLowerCase() == "paper")
+        alert("You chose Paper");
+    if (playerSelection.toLowerCase() == "scissors")
+        alert("You chose Scissors");
 }
+
+getPlayerChoice()
+
+//game
+function playRound(playerSelection, computerSelection) {
+    if(playerSelection == computerSelection){
+        alert("It's a tie!")
+    }
+    else if(playerSelection == 'Rock'){
+        if(computerSelection == 'Paper'){
+            alert("Computer wins!")
+        }else{
+            alert("Player wins!")
+        }
+    }
+    else if(playerSelection == 'Paper'){
+        if(computerSelection == 'Rock'){
+            alert("Computer wins!")
+        }else{
+            alert("Player wins!")
+        }
+    }
+    else if(playerSelection == 'Paper'){
+        if(computerSelection == 'Scissors'){
+            alert("Computer wins!")
+        }else{
+            alert("Playerwins!")
+        }
+    }
+}
+
+const computerSelection = getComputerChoice();
+playRound();

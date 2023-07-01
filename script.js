@@ -1,52 +1,52 @@
-//computer's random choice 
+//computer's choice 
 const choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
-    console.log (choices[(Math.floor(Math.random() * choices.length))]);
+    let computerSelection = choices[Math.floor(Math.random()* choices.length)];
+    console.log("Computer chose " + `${computerSelection}`)
 }
-
 
 //player's choice
 let playerSelection = prompt("Rock, Paper or Scissors?")
 
 function getPlayerChoice() {
     if (playerSelection.toLowerCase() == "rock")
-        alert("You chose Rock");
+        console.log("You chose Rock");
     if (playerSelection.toLowerCase() == "paper")
-        alert("You chose Paper");
+        console.log("You chose Paper");
     if (playerSelection.toLowerCase() == "scissors")
-        alert("You chose Scissors");
+        console.log("You chose Scissors");
 }
 
 getPlayerChoice()
 
 //game
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection == computerSelection){
-        alert("It's a tie!")
+    if(playerSelection === computerSelection){
+        console.log("It's a tie!")
     }
-    else if(playerSelection == 'Rock'){
-        if(computerSelection == 'Paper'){
-            alert("Computer wins!")
+    else if(playerSelection == 'rock'){
+        if(computerSelection == 'paper'){
+            console.log("Computer wins!")
         }else{
-            alert("Player wins!")
+            console.log("Player wins!")
         }
     }
-    else if(playerSelection == 'Paper'){
-        if(computerSelection == 'Rock'){
-            alert("Computer wins!")
+    else if(playerSelection == 'scissors'){
+        if(computerSelection == 'rock'){
+            console.log("Computer wins!")
         }else{
-            alert("Player wins!")
+            console.log("Player wins!")
         }
     }
-    else if(playerSelection == 'Paper'){
-        if(computerSelection == 'Scissors'){
-            alert("Computer wins!")
+    else if(playerSelection == 'paper'){
+        if(computerSelection == 'scissors'){
+            console.log("Computer wins!")
         }else{
-            alert("Playerwins!")
+            console.log("Player wins!")
         }
     }
 }
 
 const computerSelection = getComputerChoice();
-playRound();
+playRound(playerSelection, computerSelection);

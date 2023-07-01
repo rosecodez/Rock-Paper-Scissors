@@ -1,10 +1,8 @@
 //computer's choice 
 const choices = ["Rock", "Paper", "Scissors"];
 
-function getComputerChoice() {
-    let computerSelection = choices[Math.floor(Math.random()* choices.length)];
+let computerSelection = choices[Math.floor(Math.random()* choices.length)];
     console.log("Computer chose " + `${computerSelection}`)
-}
 
 //player's choice
 let playerSelection = prompt("Rock, Paper or Scissors?")
@@ -18,18 +16,17 @@ function getPlayerChoice() {
         console.log("You chose Scissors");
 }
 
-getPlayerChoice()
-
+getPlayerChoice();
 //game
 function playRound(playerSelection, computerSelection) {
-    if(playerSelection === computerSelection){
+    if(playerSelection == computerSelection){
         console.log("It's a tie!")
     }
     else if(playerSelection == 'rock'){
         if(computerSelection == 'paper'){
             console.log("Computer wins!")
         }else{
-            console.log("Player wins!")
+            console.log("Player wins!");
         }
     }
     else if(playerSelection == 'scissors'){
@@ -48,5 +45,5 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const computerSelection = getComputerChoice();
+
 playRound(playerSelection, computerSelection);

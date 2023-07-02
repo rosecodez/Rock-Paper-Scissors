@@ -1,10 +1,15 @@
-const choices = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
+for(let i=0; i<5; i++) {
 
-//function to generate computer's random choice
+
+
+//computer's  choice
+const choices = ["rock", "paper", "scissors"];
 let computerSelection = choices[Math.floor(Math.random()* choices.length)];
     console.log("Computer chose " + `${computerSelection}`);
 
-//function to get player's choice through prompt
+//player's choice
 let playerSelection = prompt("Rock, Paper or Scissors?");
 
 function getPlayerChoice() {
@@ -21,7 +26,7 @@ function getPlayerChoice() {
 
 getPlayerChoice(); 
 
-//function for player vs. computer comparison
+//player vs. computer comparison
 
 
 function playRound(playerSelection, computerSelection) {
@@ -50,29 +55,21 @@ function playRound(playerSelection, computerSelection) {
         console.log("Tie!");
     }
 }
+//Function loop to repeat the round 5 times
+let results = playRound(playerSelection, computerSelection);
+let playerScore = playRound(playerSelection, computerScore);
+console.log("Player Score = " + playerScore);
+console.log("Computer Score = " + computerScore);
+
 //Function to decide final score
 function gameScore() {
     if (playerScore > computerScore) {
-        console.log("Player wins!");
+        console.log("Round ends: Player wins!");
     } else if (playerSelection < computerScore) {
-        console.log("Computer wins!");
+        console.log("Round ends: Computer wins!");
     } else {
-        alert("It's a tie!");
+        console.log("It's a tie!");
     }
 }
-//Function loop to repeat the round 5 times
-let playerScore = 0;
-let computerScore = 0;
-
-function game() {
-    for(let i=0; i<5; i++) {
-    let playerSelection = prompt("Rock, Paper or Scissors?");
-    playRound(playerSelection, computerSelection);
-    console.log("Player Score =" + playerScore);
-    console.log("Computer Score = " + computerScore)
-    }
+    gameScore();
 }
-game();
-
-
-

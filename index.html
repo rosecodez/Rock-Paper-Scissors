@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
-    <script src="script.js"></script>
     <div class="header">
-        <div class="title">
-            <h1>Welcome to the game!</h1>
+        <h1>Rock Paper Scissors</h1>
+        <h2 id="demo">What is your choice?</h2>
+    </div>
+
+    <div class="selection">
+        <button class="rock" id="rock">Rock</button>
+        <button class="paper" id="paper">Paper</button>
+        <button class="scissors" id="scissors">Scissors</button>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="info">
+                <h3>You :</h3><span id="playerScore">0</span>
+            </div>
+            <div class="show">
+                <i class="rock"></i>
+            </div>
         </div>
-    <div class="intro">
-        <p>What is your choice?</p>
+
+        <div class="section">
+            <div class="info">
+                <h3>Computer :</h3><span id="computerScore">0</span>
+            </div>
+            <div class="show computer">
+                <i class="scissors"></i>
+            </div>
+        </div>
     </div>
-    </div>
-    <div class="buttons">
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
-    </div>
+
     <div class="footer">The Odin Project 2023</div>
 </body>
 </html>
